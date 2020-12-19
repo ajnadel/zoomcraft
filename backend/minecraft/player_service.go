@@ -138,7 +138,7 @@ func (svc *playerService) getRotation(username string) (*Orientation, error) {
 }
 
 func (svc *playerService) listUsernames() ([]string, error) {
-	out, err := svc.client.Execute("list")
+	out, err := svc.client.Execute("minecraft:list") // prefixed with "minecraft:" because essentialsX adds formatting to the "list" command
 	if err != nil {
 		return nil, err
 	}
